@@ -12,5 +12,5 @@ class Project extends Model
         'data_inicio',
         'status',
 
-    ]
+    ];
 }

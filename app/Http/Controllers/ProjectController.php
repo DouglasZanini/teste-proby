@@ -32,7 +32,7 @@ class ProjectController extends Controller
             'descricao' => 'nullable|string|',      
             'data_inicio' => 'required|date',
             'status' => 'required|in:Pendente, Em Andamento, Concluído',
-    ])};
+        ]);}
 
     /**
      * Display the specified resource.
