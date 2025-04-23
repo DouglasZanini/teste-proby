@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 255);
             $table->text('descricao')->nullable();
-            $table->date('data-inicio');
+            $table->date('data_inicio');
             $table->enum('status', ['Pendente', 'Em Andamento', 'Concluído']);
             $table->timestamps();
         });

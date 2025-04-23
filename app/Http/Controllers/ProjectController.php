@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -11,7 +12,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Project::latest()->paginate(10);
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -19,7 +21,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -27,13 +29,18 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'nome' => 'required|string|max:255',
-            'descricao' => 'nullable|string|',      
+            'descricao' => 'nullable|string',      
             'data_inicio' => 'required|date',
-            'status' => 'required|in:Pendente, Em Andamento, Concluído',
-        ]);}
-
+            'status' => 'required|in:Pendente,Em Andamento,Concluído',
+        ]);
+    
+        Project::create($validated);
+    
+        return redirect()->route('dashboard')->with('success', 'Projeto criado com sucesso!');
+    }
+    
     /**
      * Display the specified resource.
      */
@@ -47,7 +54,8 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -55,7 +63,15 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'nome' => 'required|string|max:255',
+            'descricao' => 'nullable|string|',      
+            'data_inicio' => 'required|date',
+            'status' => 'required|in:Pendente, Em Andamento, Concluído',
+        ]);
+
+        $project->update($validated);
+        return redirect()->route('dashboard')->with('success', 'Projeto atualizado com sucesso!');
     }
 
     /**
@@ -63,6 +79,7 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $project->delete();
+        return redirect()->route('dashboard')->with('success', 'Projeto excluído com sucesso!');
     }
 }
