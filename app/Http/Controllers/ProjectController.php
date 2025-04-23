@@ -80,7 +80,11 @@ class ProjectController extends Controller
      */
     public function destroy(string $id)
     {
-        $project->delete();
-        return redirect()->route('dashboard')->with('success', 'Projeto excluído com sucesso!');
+        $project = Project::findOrFail($id);
+    
+        $project->delete(); 
+    
+        return redirect()->route('projects.edit')->with('success', 'Projeto excluído com sucesso!');
     }
+    
 }

@@ -1,4 +1,9 @@
 <x-app-layout>
+@if(session('success'))
+    <div class="bg-green-100 text-green-700 p-4 rounded-md mb-4">
+        {{ session('success') }}
+    </div>
+@endif
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-4">Novo Projeto</h2>
 

@@ -2,11 +2,19 @@
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="bg-white shadow rounded-lg p-6">
             <div class="flex justify-between items-center mb-6">
-                <h1 class="text-2xl font-bold text-emerald-600">Todos os Projetos</h1>
-                <a href="{{ route('projects.create') }}"
-                   class="text-white bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg text-sm shadow">
-                    Novo Projeto
-                </a>
+                <div>
+                    <h1 class="text-2xl font-bold text-emerald-600">Todos os Projetos</h1>
+                </div>
+                <div class="flex gap-4">
+                    <a href="{{ route('dashboard') }}"
+                    class="text-emerald-600 border border-emerald-500 hover:bg-emerald-50 px-4 py-2 rounded-lg text-sm">
+                        Dashboard
+                    </a>
+                    <a href="{{ route('projects.create') }}"
+                    class="text-white bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg text-sm shadow">
+                        Novo Projeto
+                    </a>
+                </div>
             </div>
 
             @if ($projects->count())
