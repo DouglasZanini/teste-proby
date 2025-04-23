@@ -22,11 +22,11 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     @foreach ($recentProjects as $project)
                         <div class="bg-gray-100 p-4 rounded-lg shadow hover:shadow-md transition">
-                            <h3 class="text-lg font-semibold text-emerald-700">{{ $project->name }}</h3>
+                            <h3 class="text-lg font-semibold text-emerald-700">{{ $project->nome }}</h3>
                             <p class="text-sm text-gray-600 mt-1">
                                 Status: <span class="font-medium">{{ $project->status }}</span>
                             </p>
-                            <p class="text-xs text-gray-500 mt-2">Iniciado em {{ \Carbon\Carbon::parse($project->start_date)->format('d/m/Y') }}</p>
+                            <p class="text-xs text-gray-500 mt-2">Iniciado em {{ \Carbon\Carbon::parse($project->data_inicio)->format('d/m/Y') }}</p>
                         </div>
                     @endforeach
                 </div>

@@ -2,25 +2,25 @@
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-4">Editar Projeto</h2>
 
-        <form method="POST" action="{{ route('projects.update', $project) }}" class="space-y-6">
+        <form method="POST" action="{{ route('projects.update', $project->id) }}" class="space-y-6">
             @csrf
             @method('PUT')
 
             <div>
                 <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
-                <input type="text" name="nome" id="nome" required value="{{ $project->name }}"
+                <input type="text" name="nome" id="nome" required value="{{ $project->nome }}"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200" />
             </div>
 
             <div>
                 <label for="descricao" class="block text-sm font-medium text-gray-700">Descrição</label>
                 <textarea name="descricao" id="descricao" rows="4"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200">{{ $project->description }}</textarea>
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200">{{ $project->descricao }}</textarea>
             </div>
 
             <div>
                 <label for="data_inicio" class="block text-sm font-medium text-gray-700">Data de Início</label>
-                <input type="date" name="data_inicio" id="data_inicio" required value="{{ $project->start_date }}"
+                <input type="date" name="data_inicio" id="data_inicio" required value="{{ $project->data_inicio }}"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200" />
             </div>
 

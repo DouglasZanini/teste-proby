@@ -12,7 +12,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::latest()->paginate(10);
+        $projects = Project::orderBy('created_at', 'desc')->paginate(10);
         return view('projects.index', compact('projects'));
     }
 
@@ -44,9 +44,9 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -67,9 +67,10 @@ class ProjectController extends Controller
             'nome' => 'required|string|max:255',
             'descricao' => 'nullable|string|',      
             'data_inicio' => 'required|date',
-            'status' => 'required|in:Pendente, Em Andamento, Concluído',
+            'status' => 'required|in:Pendente,Em Andamento,Concluído',
         ]);
 
+        $project = Project::findOrFail($id);
         $project->update($validated);
         return redirect()->route('dashboard')->with('success', 'Projeto atualizado com sucesso!');
     }

@@ -24,8 +24,7 @@
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                {{ __('O ChatGPT disse:
-                    Uma vez que sua conta seja deletada, todos os seus recursos e dados serão permanentemente excluídos. Por favor, insira sua senha para confirmar que deseja excluir sua conta permanentemente.') }}
+                {{ __('Uma vez que sua conta seja deletada, todos os seus recursos e dados serão permanentemente excluídos. Por favor, insira sua senha para confirmar que deseja excluir sua conta permanentemente.') }}
             </p>
 
             <div class="mt-6">

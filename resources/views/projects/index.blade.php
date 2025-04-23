@@ -23,10 +23,13 @@
                         <tbody class="bg-white divide-y divide-gray-100">
                             @foreach ($projects as $project)
                                 <tr>
-                                    <td class="px-4 py-2 font-medium text-gray-900">{{ $project->name }}</td>
+                                    <td class="px-4 py-2 font-medium text-gray-900">{{ $project->nome }}</td>
                                     <td class="px-4 py-2">{{ $project->status }}</td>
-                                    <td class="px-4 py-2">{{ \Carbon\Carbon::parse($project->start_date)->format('d/m/Y') }}</td>
+                                    <td class="px-4 py-2">{{ \Carbon\Carbon::parse($project->data_inicio)->format('d/m/Y') }}</td>
                                     <td class="px-4 py-2 space-x-2">
+                                         <a href="{{ route('projects.show', $project->id) }}"
+                                        class="text-sm text-emerald px-3 py-1 rounded">Visualizar</a>
+                                        
                                         <a href="{{ route('projects.edit', $project) }}"
                                            class="text-emerald-600 hover:underline">Editar</a>
 
@@ -49,5 +52,8 @@
                 <p class="text-gray-500">Nenhum projeto cadastrado ainda.</p>
             @endif
         </div>
+            <div class="mt-6">
+                {{ $projects->links() }}
+            </div>
     </div>
 </x-app-layout>
