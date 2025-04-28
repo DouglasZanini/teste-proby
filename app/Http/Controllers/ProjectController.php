@@ -84,7 +84,7 @@ class ProjectController extends Controller
     
         $project->delete(); 
     
-        return redirect()->route('projects.edit')->with('success', 'Projeto excluído com sucesso!');
+        return redirect()->route('projects.index')->with('success', 'Projeto excluído com sucesso!');
     }
     
 }
