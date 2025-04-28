@@ -42,7 +42,7 @@
 
             <div>
                 <button type="submit" class="bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700">Salvar Alterações</button>
-                <a href="{{ route('dashboard') }}" class="ml-2 text-gray-600 hover:underline">Cancelar</a>
+                <a href="{{ route('projects') }}" class="ml-2 text-gray-600 hover:underline">Cancelar</a>
             </div>
         </form>
     </div>
