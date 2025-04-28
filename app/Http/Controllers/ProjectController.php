@@ -72,7 +72,7 @@ class ProjectController extends Controller
 
         $project = Project::findOrFail($id);
         $project->update($validated);
-        return redirect()->route('dashboard')->with('success', 'Projeto atualizado com sucesso!');
+        return redirect()->route('projects.index')->with('success', 'Projeto atualizado com sucesso!');
     }
 
     /**
