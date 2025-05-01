@@ -1,4 +1,10 @@
 <x-app-layout>
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-4">Novo Projeto</h2>
 

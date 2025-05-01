@@ -15,6 +15,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="min-h-screen bg-gradient-to-br from-emerald-50 to-white flex items-center justify-center">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
         <div class="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 sm:p-10">
             <div class="text-center mb-6">
                 <a href="/" class="text-2xl font-bold text-emerald-600">{{ config('app.name', 'Laravel') }}</a>
