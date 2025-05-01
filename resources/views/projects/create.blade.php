@@ -1,19 +1,18 @@
 <x-app-layout>
-@if(session('success'))
-    <div class="bg-green-100 text-green-700 p-4 rounded-md mb-4">
-        {{ session('success') }}
-    </div>
-@endif
     <div class="max-w-2xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-4">Novo Projeto</h2>
 
         <form method="POST" action="{{ route('projects.store') }}" class="space-y-6">
+            
             @csrf
 
             <div>
                 <label for="nome" class="block text-sm font-medium text-gray-700">Nome</label>
                 <input type="text" name="nome" id="nome" required
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200" />
+                    @error('nome')
+                        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                    @enderror
             </div>
 
             <div>

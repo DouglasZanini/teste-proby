@@ -68,6 +68,8 @@ class ProjectController extends Controller
             'descricao' => 'nullable|string|',      
             'data_inicio' => 'required|date',
             'status' => 'required|in:Pendente,Em Andamento,Concluído',
+        ],  [
+            'nome.max' => 'O nome do projeto deve ter no máximo 255 caracteres.',
         ]);
 
         $project = Project::findOrFail($id);
