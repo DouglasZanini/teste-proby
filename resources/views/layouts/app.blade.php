@@ -13,14 +13,19 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body class="font-sans antialiased">
-    @if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
+    @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: '{{ session('success') }}',
+                confirmButtonColor: '#10b981' // cor verde do Tailwind
+            });
+        </script>
     @endif
-
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 

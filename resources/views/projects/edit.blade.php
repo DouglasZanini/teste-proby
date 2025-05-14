@@ -1,9 +1,4 @@
 <x-app-layout>
-@if(session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
 
 <script>
     function openEditModal() {

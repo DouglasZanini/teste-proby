@@ -9,7 +9,13 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        $recentProjects = Project::orderBy('created_at', 'desc')->take(6)->get();
+        $userId = auth()->id(); // ID do usuário logado
+
+        // Buscando os projetos recentes do usuário
+        $recentProjects = Project::where('user_id', $userId)
+                                ->latest()
+                                ->take(3)
+                                ->get();
 
         return view('dashboard', compact('recentProjects'));
     }

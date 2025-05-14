@@ -19,6 +19,10 @@ return new class extends Migration
             $table->enum('status', ['Pendente', 'Em Andamento', 'Concluído']);
             $table->timestamps();
         });
+
+        Schema::table('projects', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        });
     }
 
     /**

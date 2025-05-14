@@ -1288,6 +1288,7 @@ return array(
     'Illuminate\\Cache\\DynamoDbLock' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/DynamoDbLock.php',
     'Illuminate\\Cache\\DynamoDbStore' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/DynamoDbStore.php',
     'Illuminate\\Cache\\Events\\CacheEvent' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/Events/CacheEvent.php',
+    'Illuminate\\Cache\\Events\\CacheFlushFailed' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushFailed.php',
     'Illuminate\\Cache\\Events\\CacheFlushed' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushed.php',
     'Illuminate\\Cache\\Events\\CacheFlushing' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/Events/CacheFlushing.php',
     'Illuminate\\Cache\\Events\\CacheHit' => $vendorDir . '/laravel/framework/src/Illuminate/Cache/Events/CacheHit.php',

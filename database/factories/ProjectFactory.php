@@ -16,6 +16,7 @@ class ProjectFactory extends Factory
             'descricao' => $this->faker->paragraph(),
             'data_inicio' => $this->faker->date(),
             'status' => $this->faker->randomElement(['Pendente', 'Em Andamento', 'Concluído']),
+            'user_id' => $this->faker->randomElement(['1', '2' ,'5', '6', '7']),
         ];
     }
 }
